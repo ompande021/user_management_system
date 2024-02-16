@@ -1,1 +1,6 @@
 ![Screenshot (38)](https://github.com/ompande021/user_management_system/assets/97015947/1dc383a6-2c55-4c5f-8c11-7bb2a6a2f6dc)
+![Screenshot (37)](https://github.com/ompande021/user_management_system/assets/97015947/f917730e-41c5-4785-a77d-557d4384298f)
+![Screenshot (45)](https://github.com/ompande021/user_management_system/assets/97015947/a62ad421-6cb9-4222-938e-3e9bbcc3571d)
+![Screenshot (42)](https://github.com/ompande021/user_management_system/assets/97015947/37f95876-028e-48de-b975-1b2b28afa39d)
+![Screenshot (40)](https://github.com/ompande021/user_management_system/assets/97015947/74aa2fa0-172b-4748-a535-0baa74f02ea1)
+![Screenshot (39)](https://github.com/ompande021/user_management_system/assets/97015947/cb1d2e88-4e56-4f56-b6b0-b9aa5feaf324)
