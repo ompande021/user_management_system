@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMS</title>
+    <style>
+        body{
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        h1{
+            color: black;
+            padding-left: 20px;
+        }
+        img{
+            border-radius: 50%;
+            border: 2px solid white;
+            position: relative;
+            top: 0px;
+            left: 20px;
+        }
+        .box{
+            height: 110px;
+            width: 100%;
+            border-bottom: 2px solid white;
+            background-color: rgb(51, 227, 66);
+            margin-bottom: 50px;
+        }
+        a{
+            color: rgb(46, 108, 241);
+            text-decoration: none;
+        }
+        table{
+            height: auto;
+            width: 50%;
+            margin: 20px 0 0 8px;
+        }
+        .logout{
+            width: 95%;
+            text-align: end;
+            font-size: 20px;
+        }
+        button{
+            height: 30px;
+            width: 120px;
+            font-size: 18px;
+            font-weight: 700;
+            background-color: rgb(51, 227, 66);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="box">
+    <h1>Welcome, <%= user.name %></h1>
+    <img src="userImages/<%= user.image %>" height="100px" width="100px" alt="<%= user.image %>">
+</div>
+<div class="logout"><a href="/logout">Logout</a></div>
+<table width="50%">
+    <tr>
+        <td>Email</td>
+        <td><%= user.email %></td>
+    </tr>
+    <tr>
+        <td>Mobile</td>
+        <td><%= user.mobile %></td>
+    </tr>
+    <tr>
+        <td>Verified</td>
+        <td>
+            <% if(user.is_varifed==1)
+                {   %>
+                    <p>Yes</p>
+                    <%
+                }
+            %>
+        </td>
+    </tr>
+</table>
+
+
+<a href="/edit?id=<%= user._id %>"><button>Edit Profile</button></a>
+
+
+<% include('../layouts/footer.ejs') %>

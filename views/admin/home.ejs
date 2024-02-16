@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMS</title>
+    <style>
+        body{
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        h1{
+            color: black;
+            padding:10px 0 0 20px;
+        }
+        img{
+            border-radius: 50%;
+            border: 2px solid white;
+            position: relative;
+            bottom: 10px;
+            left: 20px;
+        }
+        .box{
+            height: 110px;
+            width: 100%;
+            border-bottom: 2px solid white;
+            background-color: rgb(216, 44, 44);
+            margin-bottom: 50px;
+        }
+        a{
+            color: rgb(46, 108, 241);
+            text-decoration: none;
+        }
+        table{
+            height: auto;
+            width: 50%;
+            margin: 20px 0 0 20px;
+        }
+        .logout{
+            width: 95%;
+            text-align: end;
+            font-size: 20px;
+        }
+        button{
+            height: 30px;
+            width: 120px;
+            font-size: 18px;
+            font-weight: 700;
+            background-color: rgb(216, 44, 44);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1> Welcome, <%= admin.name %></h1>
+    <img src="/userImages/<%= admin.image %>" height="100px" width="100px" alt="<%= admin.image %>">
+</div>
+
+<div class="logout"><a href="/admin/logout">Logout</a></div>
+
+<a href="/admin/dashboard"><button>Dashboard</button></a>
+
+<table width="50%">
+    
+    <tr>
+        <td>Email</td>
+        <td><%= admin.email %></td>
+    </tr>
+    <tr>
+        <td>Mobile</td>
+        <td><%= admin.mobile %></td>
+    </tr>
+    
+</table>
+
+
+<% include('../layouts/footer.ejs') %>
+
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMS</title>
+    <style>
+        body{
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            flex-direction: column;
+            color: white;
+        }
+        
+        form{
+            margin-left: 8px;
+        }
+        input{
+            height: 20px;
+            width: 200px;
+            margin-left: 5px;
+            font-size: 15px;
+            border-radius: 5px;
+        }
+        .submit{
+            width: 150px;
+            height: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            background: rgb(51, 227, 66);
+            border: none;
+        }
+        #radio{
+            width: 30px;
+        }
+        a{
+            color: rgb(46, 108, 241);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Edit User</h1>
+
+<form action="" method="post" >
+    <label for="">Name</label>
+    <br>
+    <input type="text" name="name" placeholder="Enter Name" value="<%= user.name %>" required>
+    <br><br>
+    <label for="">Email ID</label>
+    <br>
+    <input type="email" name="email" placeholder="Enter Email" value="<%= user.email %>" required>
+    <br><br>
+    <label for="">Phone no.</label>
+    <br>
+    <input type="text" name="mobile" placeholder="Enter Phone no." value="<%= user.mobile %>" required>
+    <br><br>
+    <label>Verified</label>
+    <input type="radio" id="radio" name="verify" value="1" <% if(user.is_varifed == 1 ) { %> checked <% } %> >
+    <label>Unverified</label>
+    <input type="radio" id="radio" name="verify" value="0" <% if(user.is_varifed == 0 ) { %> checked <% } %> >
+    <br><br>
+    <input type="hidden" name="id" value="<%= user._id %>">
+    <input class="submit" type="submit" value="Update User" >
+</form>
+
+<br><br>
+
+<a href="/admin/dashboard">◁ Go to dashboard</a>
+
+<% include('../layouts/footer.ejs') %>

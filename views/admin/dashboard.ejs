@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .sec{
+            height: auto;
+            width: 90%;
+        }
+        .box{
+            height: 80px;
+            width: 100%;
+            border-bottom: 2px solid white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1{
+            margin-left: 20px;
+            font-size: 30px;
+        }
+        table{
+            margin: auto;
+        }
+        button{
+            font-size: 16px;
+            font-weight: 500;
+            padding: 7px 10px;
+            border: 3px solid rgb(239, 120, 9);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .row1 td{
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: 3px solid white;
+        }
+        a{
+            color: rgb(46, 108, 241);
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+<body>
+
+<section class="sec">
+<div class="box">
+    <h1>Dashboard</h1>
+    <a href="/admin/new-user"><button>Add New User</button></a>
+</div>
+<br>
+<div><a href="/admin/home">◁ Go to Home</a></div>
+
+<h2>Users List</h2>
+<table width="90%">
+    <tr class="row1">
+        <td>Name</td>
+        <td>Email</td>
+        <td>Mobile</td>
+        <td>Image</td>
+        <td>Verified</td>
+        <td>Action</td>
+    </tr>
+    <%
+        if(users.length > 0){
+            for(let i=0;i < users.length;i++){
+                %>
+                    <tr style="border-bottom: 2px solid black;">
+                        <td><%= users[i].name %></td>
+                        <td><%= users[i].email %></td>
+                        <td><%= users[i].mobile %></td>
+                        <td> <img src="/userImages/<%= users[i].image %>" alt="<%= users[i].image %>" height="100px" width="100px"></td>
+                        <td><% 
+                            if(users[i].is_varifed==0){
+                                %>
+                                    <p>Not verified</p>
+                                <%
+                            }else{
+                                %>
+                                    <p>verified</p>
+                                <%
+                            }
+                            %></td>
+                            <td>   <a href="/admin/edit-user?id=<%= users[i]._id %>"><button>Edit-Data</button></a>
+                                   <a href="/admin/delete-user?id=<%= users[i]._id %>"><button>Delete</button></a>  </td>
+                    </tr>
+                <%
+            }
+        }
+        else{
+            %>
+                <tr>
+                    <td colspan="5">Users Not Found</td>
+                </tr>
+            <%
+        }
+    %>
+
+</table>
+</section>
+
+
+<% include('../layouts/footer.ejs') %>
